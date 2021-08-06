@@ -1,12 +1,18 @@
+import React from "react";
 import styled from "styled-components";
-import { theme } from "../hooks/use-theme";
+import { theme, useTheme } from "../hooks/use-theme";
 
-const Background = styled.div`
+const StyledBackground = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  background: ${theme.LIGHT.bg};
+  background: ${({ theme }) => theme.bg};
 `;
+
+const Background = ({ children }) => {
+  const theme = useTheme();
+  return <StyledBackground theme={theme}>{children}</StyledBackground>;
+};
 
 export default Background;

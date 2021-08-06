@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
-import { theme } from "../hooks/use-theme";
+import { theme, useTheme } from "../hooks/use-theme";
 import React from "react";
 import useJoke from "../hooks/use-joke";
 
-const Button = styled.div`
+const StyledButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 45px;
-  background: ${theme.LIGHT.button};
+  background: ${({ theme }) => theme.button};
+  color: ${({ theme }) => theme.buttonText};
   padding: 0.5em 1em;
   border-radius: 10px;
   cursor: pointer;
@@ -21,5 +22,14 @@ const Button = styled.div`
     transform: scale(0.99);
   }
 `;
+
+const Button = (props) => {
+  const theme = useTheme();
+  return (
+    <StyledButton {...props} theme={theme}>
+      {props.children}
+    </StyledButton>
+  );
+};
 
 export default Button;

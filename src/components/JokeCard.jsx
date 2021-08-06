@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../hooks/use-theme";
+import { theme, useTheme } from "../hooks/use-theme";
 import { ClipLoader } from "react-spinners";
 import { motion } from "framer-motion";
 
@@ -11,7 +11,7 @@ const Card = styled(motion.div)`
   width: 600px;
   min-height: 200px;
   padding: 2.5em;
-  background: ${theme.LIGHT.card};
+  background: ${({ theme }) => theme.card};
   border-radius: 15px;
   transition: ease all 100ms;
   margin-top: 5em;
@@ -20,7 +20,7 @@ const Card = styled(motion.div)`
     line-height: 40px;
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
-    color: ${theme.LIGHT.text};
+    color: ${({ theme }) => theme.text};
     @media (max-width: 768px) {
       font-size: 20px;
       line-height: 30px;
@@ -40,9 +40,10 @@ const variants = {
 
 const JokeCard = ({ joke }) => {
   const { data, isLoading, error } = joke;
+  const theme = useTheme();
   return (
-    <Card>
-      {isLoading && <ClipLoader color={theme.LIGHT.text} />}
+    <Card theme={theme}>
+      {isLoading && <ClipLoader color={theme.text} />}
       {data && (
         <motion.p
           variants={variants}
