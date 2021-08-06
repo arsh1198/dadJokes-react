@@ -29,7 +29,6 @@ var i=Object.defineProperty,x=Object.defineProperties,t=Object.getOwnPropertyDes
   @media (max-width: 768px) {
     width: 350px;
     padding: 2em;
-    margin-top: 7em;
   }
 `,A={initial:{opacity:0},animate:{opacity:1},exit:{opacity:0}},V=({joke:i})=>{const{data:x,isLoading:t,error:o}=i;return m.createElement(D,null,t&&m.createElement(e.ClipLoader,{color:b.text}),x&&m.createElement(c.p,{variants:A,initial:"initial",animate:"animate",exit:"exit",key:x.id},x.joke))},f={data:null,isLoading:!0,error:null},g=n.div`
   display: flex;
@@ -51,7 +50,7 @@ var i=Object.defineProperty,x=Object.defineProperties,t=Object.getOwnPropertyDes
   position: fixed;
   top: 300px;
   @media (max-width: 768px) {
-    top: 380px;
+    top: 400px;
   }
 `,T=()=>m.createElement("div",{style:{display:"flex",width:"100%",justifyContent:"center"}},m.createElement(F,null,m.createElement(h,{isClickToPauseDisabled:!0,options:S,height:350,width:350})));function P(){const[i,x]=(()=>{const[i,x]=p.exports.useState(f);return[i,async()=>{try{const{data:i}=await l.get("https://icanhazdadjoke.com/",{headers:{Accept:"application/json","Content-Type":"application/json"}});console.log(i),x((i=>k(r({},i),{isLoading:!1}))),x((x=>k(r({},x),{data:i})))}catch(i){x((x=>k(r({},x),{error:i.message})))}}]})();return p.exports.useEffect((()=>{x()}),[]),d({position:"top",time:4e3}),m.createElement("div",{className:"App"},m.createElement(B,null,m.createElement("div",null,m.createElement(V,{joke:i}),m.createElement("div",{style:{width:"100%",display:"flex",justifyContent:"flex-end",marginTop:"10px"}},m.createElement(g,{title:"Copy to Clipboard",onClick:()=>{navigator.clipboard.writeText(i.data.joke).then((()=>{v("Copied to Clipboard!")}))},style:{background:b.buttonText,marginRight:"10px"}},m.createElement(E,{color:b.button})),m.createElement(g,{style:{width:"100px"},title:"New Random Joke",onClick:()=>{x()}},m.createElement(u,{color:b.buttonText})))),m.createElement(T,null)))}G.render(m.createElement(m.StrictMode,null,m.createElement(P,null)),document.getElementById("root"));
-//# sourceMappingURL=index.4927faee.js.map
+//# sourceMappingURL=index.7a19fb72.js.map
