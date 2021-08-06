@@ -6,7 +6,6 @@ const Background = styled.div`
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  width: 100vw;
   background: ${theme.LIGHT.bg};
 `;
 

@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <Background>
-        <div>
+        <div style={{ zIndex: 10 }}>
           <JokeCard joke={joke} />
           <div
             style={{

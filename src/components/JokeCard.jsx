@@ -21,8 +21,15 @@ const Card = styled(motion.div)`
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
     color: ${theme.LIGHT.text};
+    @media (max-width: 768px) {
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
-  font-weight: bold;
+  @media (max-width: 768px) {
+    width: 350px;
+    padding: 2em;
+  }
 `;
 
 const variants = {

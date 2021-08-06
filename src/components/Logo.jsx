@@ -13,6 +13,14 @@ const defaultOptions = {
   },
 };
 
+const Animation = styled.div`
+  position: fixed;
+  top: 300px;
+  @media (max-width: 768px) {
+    top: 400px;
+  }
+`;
+
 const Logo = () => {
   return (
     <div
@@ -22,12 +30,14 @@ const Logo = () => {
         justifyContent: "center",
       }}
     >
-      <Lottie
-        style={{ position: "fixed", top: 300 }}
-        options={defaultOptions}
-        height={350}
-        width={350}
-      />
+      <Animation>
+        <Lottie
+          isClickToPauseDisabled
+          options={defaultOptions}
+          height={350}
+          width={350}
+        />
+      </Animation>
     </div>
   );
 };
