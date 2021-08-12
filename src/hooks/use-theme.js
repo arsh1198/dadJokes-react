@@ -21,7 +21,6 @@ export const theme = {
 
 export const useTheme = () => {
   const { isDarkTheme } = useContext(ThemeContext);
-  console.log("USE THEME => ", isDarkTheme);
 
   return isDarkTheme ? theme.DARK : theme.LIGHT;
 };

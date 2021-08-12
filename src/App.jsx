@@ -20,6 +20,7 @@ function App() {
 
   useEffect(() => {
     fetchRandomJoke();
+    console.log("Made with 💜 by ARSH!");
   }, []);
 
   toastConfig({

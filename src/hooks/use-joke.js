@@ -18,7 +18,7 @@ const useJoke = () => {
           "Content-Type": "application/json",
         },
       });
-      console.log(data);
+
       setJoke((prev) => ({ ...prev, isLoading: false }));
       setJoke((prev) => ({ ...prev, data }));
     } catch (error) {
